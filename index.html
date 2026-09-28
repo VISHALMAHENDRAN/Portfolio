@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of a Test Automation Developer and Performance Testing Engineer." />
+  <title>Vishal Mahendran | Test Automation & Performance Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0c1929;
+      --card: rgba(14, 29, 48, .72);
+      --card-solid: #0e1d30;
+      --text: #edf5ff;
+      --muted: #9eb0c7;
+      --line: rgba(159, 188, 219, .14);
+      --accent: #55d6be;
+      --accent-2: #6ea8fe;
+      --accent-3: #b58cff;
+      --shadow: 0 20px 60px rgba(0,0,0,.28);
+      --radius: 22px;
+    }
+    body.light {
+      --bg: #f5f8fc;
+      --bg-soft: #edf3fa;
+      --card: rgba(255,255,255,.82);
+      --card-solid: #ffffff;
+      --text: #102033;
+      --muted: #617086;
+      --line: rgba(25, 54, 84, .12);
+      --shadow: 0 18px 45px rgba(36,63,94,.12);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(85,214,190,.12), transparent 30%),
+        radial-gradient(circle at 90% 20%, rgba(110,168,254,.12), transparent 28%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      transition: background .25s, color .25s;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .container { width: min(1120px, calc(100% - 40px)); margin: auto; }
+    .nav {
+      position: fixed; inset: 0 0 auto; z-index: 50;
+      backdrop-filter: blur(18px);
+      background: color-mix(in srgb, var(--bg) 72%, transparent);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner { height: 72px; display:flex; align-items:center; justify-content:space-between; }
+    .brand { font-family:"Space Grotesk"; font-weight:700; letter-spacing:-.03em; }
+    .brand span { color: var(--accent); }
+    .nav-links { display:flex; gap: 24px; align-items:center; }
+    .nav-links a { color:var(--muted); font-size:.9rem; font-weight:600; transition:.2s; }
+    .nav-links a:hover { color:var(--text); }
+    .icon-btn {
+      border:1px solid var(--line); background:var(--card); color:var(--text);
+      width:40px;height:40px;border-radius:12px; cursor:pointer;
+    }
+    .menu-btn { display:none; }
+    section { padding: 105px 0 30px; }
+    .hero { min-height: 100vh; display:grid; place-items:center; padding-top:130px; }
+    .hero-grid { display:grid; grid-template-columns: 1.2fr .8fr; gap:55px; align-items:center; }
+    .eyebrow { color:var(--accent); font-weight:700; text-transform:uppercase; letter-spacing:.16em; font-size:.76rem; }
+    h1 { font-family:"Space Grotesk"; font-size: clamp(3rem, 7vw, 5.8rem); line-height:.98; letter-spacing:-.065em; margin:18px 0 22px; }
+    h1 .gradient { background:linear-gradient(100deg,var(--accent),var(--accent-2),var(--accent-3)); -webkit-background-clip:text; color:transparent; }
+    .hero-copy { color:var(--muted); font-size:1.08rem; max-width:670px; }
+    .cta-row { display:flex; gap:12px; flex-wrap:wrap; margin-top:30px; }
+    .btn { padding:12px 18px; border-radius:13px; border:1px solid var(--line); font-weight:700; cursor:pointer; display:inline-flex; align-items:center; gap:8px; }
+    .btn-primary { background:var(--accent); color:#05231d; border-color:transparent; }
+    .btn-secondary { background:var(--card); }
+    .hero-card {
+      position:relative; padding:28px; border:1px solid var(--line); border-radius:28px;
+      background:linear-gradient(145deg, rgba(85,214,190,.08), rgba(110,168,254,.06)), var(--card);
+      box-shadow:var(--shadow); overflow:hidden;
+    }
+    .hero-card::before { content:""; position:absolute; width:180px;height:180px;right:-70px;top:-70px;border-radius:50%;background:var(--accent);opacity:.1; }
+    .terminal { background:#06101d; border-radius:18px; padding:18px; color:#b8d2e9; font: .84rem/1.7 ui-monospace,SFMono-Regular,monospace; }
+    .terminal .green { color:#65e6c9; } .terminal .blue { color:#79b5ff; }
+    .stat-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:15px; }
+    .stat { padding:15px; border:1px solid var(--line); border-radius:16px; background:rgba(255,255,255,.025); }
+    .stat strong { display:block; font-size:1.55rem; font-family:"Space Grotesk"; }
+    .stat small { color:var(--muted); }
+    .section-head { display:flex; justify-content:space-between; gap:20px; align-items:end; margin-bottom:28px; }
+    .section-kicker { color:var(--accent-2); font-size:.78rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
+    h2 { font-family:"Space Grotesk"; font-size:clamp(2rem,4vw,3rem); letter-spacing:-.05em; margin-top:7px; }
+    .section-intro { color:var(--muted); max-width:620px; }
+    .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+    .panel { background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:25px; box-shadow:var(--shadow); }
+    .panel h3 { font-family:"Space Grotesk"; margin-bottom:10px; }
+    .chips { display:flex; flex-wrap:wrap; gap:9px; margin-top:18px; }
+    .chip { padding:7px 11px; border-radius:999px; background:rgba(85,214,190,.08); border:1px solid rgba(85,214,190,.16); color:var(--text); font-size:.82rem; }
+    .timeline { position:relative; margin-top:30px; }
+    .timeline::before { content:""; position:absolute; left:12px; top:8px; bottom:8px; width:1px; background:var(--line); }
+    .job { position:relative; padding-left:48px; margin-bottom:34px; }
+    .dot { position:absolute; left:5px; top:7px; width:15px;height:15px;border-radius:50%; background:var(--accent); box-shadow:0 0 0 5px rgba(85,214,190,.10); }
+    .job-card { padding:24px; border:1px solid var(--line); background:var(--card); border-radius:20px; }
+    .job-top { display:flex; justify-content:space-between; gap:15px; align-items:flex-start; }
+    .job h3 { font-family:"Space Grotesk"; font-size:1.25rem; }
+    .role { color:var(--accent); font-weight:700; font-size:.9rem; margin-top:2px; }
+    .date { color:var(--muted); white-space:nowrap; font-size:.85rem; }
+    .job ul { margin:14px 0 0 19px; color:var(--muted); }
+    .job li { margin:7px 0; }
+    .company-note { margin-top:10px; color:var(--muted); font-size:.9rem; }
+    .filters { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:18px; }
+    .filter { border:1px solid var(--line); background:var(--card); color:var(--muted); padding:8px 13px; border-radius:999px; cursor:pointer; }
+    .filter.active { color:#05231d; background:var(--accent); border-color:transparent; font-weight:700; }
+    .skills-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:15px; }
+    .skill { padding:20px; background:var(--card); border:1px solid var(--line); border-radius:18px; }
+    .skill-top { display:flex; justify-content:space-between; gap:10px; margin-bottom:11px; font-weight:700; }
+    .skill-top span:last-child { color:var(--muted); font-size:.78rem; }
+    .bar { height:7px; background:rgba(128,155,182,.15); border-radius:99px; overflow:hidden; }
+    .bar i { display:block; height:100%; width:var(--level); background:linear-gradient(90deg,var(--accent),var(--accent-2)); border-radius:inherit; transform-origin:left; animation:grow 1.1s ease both; }
+    @keyframes grow { from { transform:scaleX(0); } to { transform:scaleX(1); } }
+    .projects { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .project { padding:23px; border:1px solid var(--line); background:var(--card); border-radius:20px; min-height:210px; transition:transform .2s, border-color .2s; }
+    .project:hover { transform:translateY(-5px); border-color:rgba(85,214,190,.35); }
+    .project-icon { width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:rgba(85,214,190,.1); margin-bottom:17px; }
+    .project h3 { font-family:"Space Grotesk"; margin-bottom:8px; }
+    .project p { color:var(--muted); font-size:.9rem; }
+    .project .chips { margin-top:14px; }
+    .contact { display:grid; grid-template-columns:1fr .85fr; gap:18px; }
+    .contact-list { display:grid; gap:12px; margin-top:18px; }
+    .contact-item { padding:15px; border:1px solid var(--line); border-radius:15px; background:rgba(255,255,255,.025); }
+    .contact-item small { color:var(--muted); display:block; }
+    .contact-item strong { word-break:break-word; }
+    footer { padding:50px 0; color:var(--muted); text-align:center; font-size:.85rem; }
+    .reveal { opacity:0; transform:translateY(18px); transition:.65s ease; }
+    .reveal.show { opacity:1; transform:none; }
+    .backtop { position:fixed;right:18px;bottom:18px; opacity:0; pointer-events:none; transition:.2s; }
+    .backtop.show { opacity:1; pointer-events:auto; }
+    .toast { position:fixed; left:50%; bottom:22px; transform:translate(-50%, 20px); opacity:0; background:var(--card-solid); border:1px solid var(--line); padding:11px 16px; border-radius:12px; box-shadow:var(--shadow); transition:.25s; z-index:100; }
+    .toast.show { opacity:1; transform:translate(-50%,0); }
+    @media (max-width: 850px) {
+      .nav-links { display:none; position:absolute; top:72px; left:0; right:0; padding:20px; flex-direction:column; background:var(--bg-soft); border-bottom:1px solid var(--line); }
+      .nav-links.open { display:flex; }
+      .menu-btn { display:block; }
+      .hero-grid,.about-grid,.contact { grid-template-columns:1fr; }
+      .hero { min-height:auto; padding-top:130px; }
+      .skills-grid { grid-template-columns:repeat(2,1fr); }
+      .projects { grid-template-columns:1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .container { width:min(100% - 28px,1120px); }
+      section { padding-top:80px; }
+      .skills-grid,.projects { grid-template-columns:1fr; }
+      .job-top { flex-direction:column; }
+      .date { white-space:normal; }
+      h1 { font-size:3.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#home">VM<span>.</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#work">Focus Areas</a><a href="#contact">Contact</a>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">☼</button>
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">Test Automation • Performance Engineering • QA</div>
+          <h1>Building <span class="gradient">faster, stronger</span> software through intelligent testing.</h1>
+          <p class="hero-copy">
+            Test Automation Developer and performance testing professional with experience across insurance and Life Sciences,
+            focused on scalability, observability, automation, and actionable quality insights.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#experience">View experience →</a>
+            <a class="btn btn-secondary" href="#contact">Let's connect</a>
+          </div>
+        </div>
+
+        <div class="hero-card reveal">
+          <div class="terminal">
+            <div><span class="green">const</span> engineer = {</div>
+            <div>&nbsp;&nbsp;focus: <span class="blue">"performance"</span>,</div>
+            <div>&nbsp;&nbsp;automation: <span class="blue">"JMeter + Jenkins"</span>,</div>
+            <div>&nbsp;&nbsp;observability: <span class="blue">"Dynatrace + Grafana"</span>,</div>
+            <div>&nbsp;&nbsp;data: <span class="blue">"Oracle + SQL"</span>,</div>
+            <div>&nbsp;&nbsp;quality: <span class="blue">"continuous"</span></div>
+            <div>};</div>
+          </div>
+          <div class="stat-grid">
+            <div class="stat"><strong class="counter" data-target="30">0</strong><small>max response-time reduction %</small></div>
+            <div class="stat"><strong class="counter" data-target="15">0</strong><small>test coverage improvement %</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="section-kicker">01 / Profile</div><h2>Engineering with measurable outcomes.</h2></div>
+        </div>
+        <div class="about-grid">
+          <div class="panel reveal">
+            <h3>Professional summary</h3>
+            <p class="section-intro">
+              QA and performance engineering professional experienced in designing end-to-end test strategies,
+              executing load and scalability tests, investigating application and database bottlenecks, and integrating
+              performance validation into CI/CD workflows.
+            </p>
+            <div class="chips">
+              <span class="chip">Insurance</span><span class="chip">Life Sciences</span><span class="chip">Performance Testing</span><span class="chip">Test Automation</span><span class="chip">Observability</span>
+            </div>
+          </div>
+          <div class="panel reveal">
+            <h3>What I bring</h3>
+            <p class="section-intro">
+              A practical combination of test design, performance analysis, monitoring, SQL investigation,
+              API validation, automation pipelines, and stakeholder communication.
+            </p>
+            <div class="chips">
+              <span class="chip">JMeter</span><span class="chip">Jenkins</span><span class="chip">Dynatrace</span><span class="chip">Guidewire Profiler</span><span class="chip">SolarWinds DPA</span><span class="chip">Postman</span><span class="chip">Grafana</span><span class="chip">Splunk</span><span class="chip">New Relic</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="section-kicker">02 / Experience</div><h2>Professional journey.</h2></div>
+        </div>
+        <div class="timeline">
+          <article class="job reveal">
+            <span class="dot"></span>
+            <div class="job-card">
+              <div class="job-top">
+                <div><h3>Tata Consultancy Services</h3><div class="role">System Engineer · Test Automation Developer</div></div>
+                <div class="date">October 2022 — Present</div>
+              </div>
+              <p class="company-note">Insurance domain · Performance engineering for Guidewire PolicyCenter applications.</p>
+              <ul>
+                <li>Designed and executed end-to-end performance testing strategies for enterprise web applications, focusing on efficiency and scalability.</li>
+                <li>Used Apache JMeter to script and execute load tests with synthetic users, improving test coverage for lines of business by 15% across UI and API transactions.</li>
+                <li>Performed SQL query analysis and Oracle database monitoring using SolarWinds Database Performance Analyzer (DPA).</li>
+                <li>Used Dynatrace and Guidewire Profiler for application performance monitoring and root-cause analysis.</li>
+                <li>Identified and remediated performance bottlenecks, reducing response times by up to 30%.</li>
+                <li>Prepared performance summary reports and presented actionable findings to stakeholders.</li>
+                <li>Built and managed Jenkins pipelines to automate test execution and streamline operations.</li>
+                <li>Conducted scalability and performance tests, identifying and resolving defects.</li>
+                <li>Monitored application and infrastructure insights using New Relic, Grafana, and Splunk.</li>
+                <li>Validated APIs with Postman and compared test results with production responses for optimization.</li>
+                <li>Participated in sprint planning and integrated performance testing into CI/CD workflows.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="job reveal">
+            <span class="dot"></span>
+            <div class="job-card">
+              <div class="job-top">
+                <div><h3>ArisGlobal LLC</h3><div class="role">Application Specialist</div></div>
+                <div class="date">August 2019 — September 2022</div>
+              </div>
+              <p class="company-note">Life Sciences · Pharmacovigilance software, including cloud-based and machine-learning solutions.</p>
+              <ul>
+                <li>Led Quality Assurance activities for cloud-based and machine-learning software solutions, supporting performance and compliance objectives.</li>
+                <li>Designed, developed, and executed test plans and test cases using HP ALM across the software development lifecycle.</li>
+                <li>Performed functional, sanity, and regression testing for feature validation.</li>
+                <li>Conducted performance testing using Apache JMeter and validated outcomes against non-functional requirements.</li>
+                <li>Executed baseline and load testing for multi-tenant web applications.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="section-kicker">03 / Toolkit</div><h2>Tools & capabilities.</h2></div>
+          <p class="section-intro">Interactive skill groups based on the technologies and responsibilities in the supplied experience.</p>
+        </div>
+        <div class="filters reveal" id="skillFilters">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="performance">Performance</button>
+          <button class="filter" data-filter="automation">Automation</button>
+          <button class="filter" data-filter="observability">Observability</button>
+          <button class="filter" data-filter="qa">QA</button>
+        </div>
+        <div class="skills-grid" id="skillGrid">
+          <div class="skill reveal" data-cat="performance"><div class="skill-top"><span>Apache JMeter</span><span>Performance</span></div><div class="bar"><i style="--level:92%"></i></div></div>
+          <div class="skill reveal" data-cat="automation"><div class="skill-top"><span>Jenkins / CI-CD</span><span>Automation</span></div><div class="bar"><i style="--level:87%"></i></div></div>
+          <div class="skill reveal" data-cat="observability"><div class="skill-top"><span>Dynatrace</span><span>Observability</span></div><div class="bar"><i style="--level:84%"></i></div></div>
+          <div class="skill reveal" data-cat="performance"><div class="skill-top"><span>Oracle / SQL</span><span>Performance</span></div><div class="bar"><i style="--level:82%"></i></div></div>
+          <div class="skill reveal" data-cat="observability"><div class="skill-top"><span>Grafana / Splunk</span><span>Observability</span></div><div class="bar"><i style="--level:80%"></i></div></div>
+          <div class="skill reveal" data-cat="performance"><div class="skill-top"><span>Guidewire Profiler</span><span>Performance</span></div><div class="bar"><i style="--level:78%"></i></div></div>
+          <div class="skill reveal" data-cat="qa"><div class="skill-top"><span>Functional / Regression QA</span><span>QA</span></div><div class="bar"><i style="--level:90%"></i></div></div>
+          <div class="skill reveal" data-cat="qa"><div class="skill-top"><span>Postman / API Testing</span><span>QA</span></div><div class="bar"><i style="--level:85%"></i></div></div>
+          <div class="skill reveal" data-cat="qa"><div class="skill-top"><span>HP ALM</span><span>QA</span></div><div class="bar"><i style="--level:76%"></i></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="section-kicker">04 / Focus Areas</div><h2>Where the work happens.</h2></div>
+        </div>
+        <div class="projects">
+          <article class="project reveal"><div class="project-icon">⚡</div><h3>Performance Engineering</h3><p>Load, baseline, scalability, and response-time analysis for enterprise applications and multi-tenant platforms.</p><div class="chips"><span class="chip">JMeter</span><span class="chip">NFR</span></div></article>
+          <article class="project reveal"><div class="project-icon">🔎</div><h3>Root-Cause Analysis</h3><p>Correlating application, database, and infrastructure signals to identify bottlenecks and actionable remediation areas.</p><div class="chips"><span class="chip">Dynatrace</span><span class="chip">Oracle</span></div></article>
+          <article class="project reveal"><div class="project-icon">⚙️</div><h3>Continuous Testing</h3><p>Automating performance execution and integrating validation into delivery workflows through CI/CD pipelines.</p><div class="chips"><span class="chip">Jenkins</span><span class="chip">CI/CD</span></div></article>
+          <article class="project reveal"><div class="project-icon">📊</div><h3>Observability</h3><p>Using monitoring and visualization tools to understand application and infrastructure behavior during testing.</p><div class="chips"><span class="chip">Grafana</span><span class="chip">Splunk</span><span class="chip">New Relic</span></div></article>
+          <article class="project reveal"><div class="project-icon">🧪</div><h3>API Validation</h3><p>Validating API behavior and comparing test outcomes with production responses to support optimization.</p><div class="chips"><span class="chip">Postman</span><span class="chip">API</span></div></article>
+          <article class="project reveal"><div class="project-icon">✓</div><h3>Quality Assurance</h3><p>Functional, sanity, regression, and lifecycle-based testing for cloud and Life Sciences software solutions.</p><div class="chips"><span class="chip">HP ALM</span><span class="chip">SDLC</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact">
+          <div class="panel reveal">
+            <div class="section-kicker">05 / Contact</div>
+            <h2>Let's build reliable software.</h2>
+            <p class="section-intro" style="margin-top:12px">
+              Interested in discussing performance engineering, test automation, or QA opportunities? Replace the placeholder contact details with your own before publishing.
+            </p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="mailto:your.vishal.mahendran2@gmail.com">Email me</a>
+              <button class="btn btn-secondary" id="copyEmail">Copy email</button>
+            </div>
+          </div>
+          <div class="panel reveal">
+            <h3>Contact details</h3>
+            <div class="contact-list">
+              <div class="contact-item"><small>Email</small><strong>Vishal.mahendran2@gmail.com</strong></div>
+              <div class="contact-item"><small>LinkedIn</small><strong>https://in.linkedin.com/in/vishal-mahendran-a39871124</strong></div>
+              <div class="contact-item"><small>Location</small><strong>India</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>© <span id="year"></span> Vishal Mahendran · Test Automation & Performance Engineering</footer>
+  <button class="icon-btn backtop" id="backtop" aria-label="Back to top">↑</button>
+  <div class="toast" id="toast">Email copied</div>
+
+  <script>
+    const body = document.body;
+    const themeBtn = document.getElementById('themeBtn');
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    const savedTheme = localStorage.getItem('portfolio-theme');
+    if (savedTheme === 'light') body.classList.add('light');
+    themeBtn.textContent = body.classList.contains('light') ? '☾' : '☼';
+
+    themeBtn.addEventListener('click', () => {
+      body.classList.toggle('light');
+      const theme = body.classList.contains('light') ? 'light' : 'dark';
+      localStorage.setItem('portfolio-theme', theme);
+      themeBtn.textContent = theme === 'light' ? '☾' : '☼';
+    });
+    menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
+    }, {threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    let counted = false;
+    const counterObserver = new IntersectionObserver(entries => {
+      if (!entries[0].isIntersecting || counted) return;
+      counted = true;
+      document.querySelectorAll('.counter').forEach(el => {
+        const target = Number(el.dataset.target);
+        let current = 0;
+        const step = Math.max(1, Math.ceil(target / 35));
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= target) { current = target; clearInterval(timer); }
+          el.textContent = current + '%';
+        }, 30);
+      });
+    }, {threshold:.5});
+    counterObserver.observe(document.querySelector('.hero-card'));
+
+    document.querySelectorAll('#skillFilters .filter').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#skillFilters .filter').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('#skillGrid .skill').forEach(card => {
+          card.style.display = filter === 'all' || card.dataset.cat === filter ? '' : 'none';
+        });
+      });
+    });
+
+    const backtop = document.getElementById('backtop');
+    window.addEventListener('scroll', () => backtop.classList.toggle('show', window.scrollY > 600));
+    backtop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+    const toast = document.getElementById('toast');
+    document.getElementById('copyEmail').addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText('your.email@example.com');
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 1800);
+      } catch { alert('Copy failed. Email: your.email@example.com'); }
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
